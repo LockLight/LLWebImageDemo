@@ -12,6 +12,6 @@
 
 @interface LLDownLoaderOp : NSOperation
 
-+ (instancetype)downLoaderWithUrl:(NSURL *)url andSuccessBlock:(void (^)(UIImage *img))bk;
++ (instancetype)downLoaderWithUrl:(NSString *)urlString andCompleteBlock:(void (^)(UIImage *img))completeBk;
 
 @end

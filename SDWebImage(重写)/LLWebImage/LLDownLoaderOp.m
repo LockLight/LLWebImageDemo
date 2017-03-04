@@ -10,17 +10,17 @@
 
 @interface LLDownLoaderOp ()
 
-@property (nonatomic, strong) NSURL *url;
-@property (nonatomic, copy)void(^bk)(UIImage *img);
+@property (nonatomic, strong) NSString *urlString;
+@property (nonatomic, copy)void(^completeBk)(UIImage *img);
 
 @end
 
 @implementation LLDownLoaderOp
 
-+ (instancetype)downLoaderWithUrl:(NSURL *)url andSuccessBlock:(void (^)(UIImage *img))bk{
++ (instancetype)downLoaderWithUrl:(NSString *)urlString andCompleteBlock:(void (^)(UIImage *img))completeBk{
     LLDownLoaderOp *op = [[self alloc]init];
-    op.url = url;
-    op.bk = bk;
+    op.urlString = urlString;
+    op.completeBk = completeBk;
     
     return op;
 }
@@ -28,11 +28,18 @@
 
 - (void)main{
     //获取图片
-    UIImage *img = [UIImage imageWithData:[NSData dataWithContentsOfURL:self.url]];
+    UIImage *img = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:self.urlString]]];
+    
+    //模拟延迟
+    [NSThread sleepForTimeInterval:1];
+    
+    if(self.isCancelled){
+        NSLog(@"被取消了 %@",self.urlString);
+    }
     
     //回调更新UI
     [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-        self.bk(img);
+        self.completeBk(img);
     }];
     
 }
