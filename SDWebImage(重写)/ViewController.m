@@ -11,18 +11,16 @@
 #import "LLAppModel.h"
 #import "AFNetworking.h"
 #import "LLDownLoadMannager.h"
+#import "UIImageView+LLWebImage.h"
 
 @interface ViewController ()
 
-@property (nonatomic, strong) NSOperationQueue *queue;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
-@property (nonatomic, strong) NSMutableDictionary *cacheOp;
 
 @end
 
 @implementation ViewController{
     NSArray<LLAppModel *> *_modelList;
-    NSString *_LastUrl;
 }
 
 - (void)viewDidLoad {
@@ -35,18 +33,7 @@
     int randomIndex = arc4random_uniform((uint32_t)_modelList.count);
     LLAppModel *model = _modelList[randomIndex];
     
-    
-    //判断操作是否重复
-    if(![model.icon isEqualToString:_LastUrl] && _LastUrl){
-        //单例取消
-        [[LLDownLoadMannager sharedManager] cancelWithLastUrl:_LastUrl];
-    }
-    //保存当前图片地址,做下次的图片地址
-    _LastUrl = model.icon;
-    
-    [[LLDownLoadMannager sharedManager] downLoaderWithUrl:model.icon andCompleteBlock:^(UIImage *img) {
-        self.imageView.image = img;
-    }];
+    [self.imageView ll_setImageWithUrl:model.icon andPlaceHoldImage:nil];
 }
 
 - (void)loadData{

@@ -22,6 +22,8 @@
 		CDC640901E6A67BA00DE21E9 /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = CDC640891E6A67BA00DE21E9 /* AFURLResponseSerialization.m */; };
 		CDC640911E6A67BA00DE21E9 /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CDC6408B1E6A67BA00DE21E9 /* AFURLSessionManager.m */; };
 		CDC640941E6A945500DE21E9 /* LLDownLoadMannager.m in Sources */ = {isa = PBXBuildFile; fileRef = CDC640931E6A945500DE21E9 /* LLDownLoadMannager.m */; };
+		CDC640971E6AAB0F00DE21E9 /* NSString+NSString_LLAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = CDC640961E6AAB0F00DE21E9 /* NSString+NSString_LLAddition.m */; };
+		CDC6409A1E6AADD200DE21E9 /* UIImageView+LLWebImage.m in Sources */ = {isa = PBXBuildFile; fileRef = CDC640991E6AADD200DE21E9 /* UIImageView+LLWebImage.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +56,10 @@
 		CDC6408B1E6A67BA00DE21E9 /* AFURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLSessionManager.m; sourceTree = "<group>"; };
 		CDC640921E6A945500DE21E9 /* LLDownLoadMannager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLDownLoadMannager.h; sourceTree = "<group>"; };
 		CDC640931E6A945500DE21E9 /* LLDownLoadMannager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLDownLoadMannager.m; sourceTree = "<group>"; };
+		CDC640951E6AAB0F00DE21E9 /* NSString+NSString_LLAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+NSString_LLAddition.h"; sourceTree = "<group>"; };
+		CDC640961E6AAB0F00DE21E9 /* NSString+NSString_LLAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+NSString_LLAddition.m"; sourceTree = "<group>"; };
+		CDC640981E6AADD200DE21E9 /* UIImageView+LLWebImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+LLWebImage.h"; sourceTree = "<group>"; };
+		CDC640991E6AADD200DE21E9 /* UIImageView+LLWebImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+LLWebImage.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,12 +118,16 @@
 		CDA0EA031E699A3F00F9407B /* LLWebImage */ = {
 			isa = PBXGroup;
 			children = (
+				CDC640951E6AAB0F00DE21E9 /* NSString+NSString_LLAddition.h */,
+				CDC640961E6AAB0F00DE21E9 /* NSString+NSString_LLAddition.m */,
 				CDA0EA041E699A5900F9407B /* LLDownLoaderOp.h */,
 				CDA0EA051E699A5900F9407B /* LLDownLoaderOp.m */,
 				CDC6407B1E6A675B00DE21E9 /* LLAppModel.h */,
 				CDC6407C1E6A675B00DE21E9 /* LLAppModel.m */,
 				CDC640921E6A945500DE21E9 /* LLDownLoadMannager.h */,
 				CDC640931E6A945500DE21E9 /* LLDownLoadMannager.m */,
+				CDC640981E6AADD200DE21E9 /* UIImageView+LLWebImage.h */,
+				CDC640991E6AADD200DE21E9 /* UIImageView+LLWebImage.m */,
 			);
 			path = LLWebImage;
 			sourceTree = "<group>";
@@ -225,7 +235,9 @@
 				CDC6408E1E6A67BA00DE21E9 /* AFSecurityPolicy.m in Sources */,
 				CDC6408C1E6A67BA00DE21E9 /* AFHTTPSessionManager.m in Sources */,
 				CDA0E9F11E69968300F9407B /* AppDelegate.m in Sources */,
+				CDC6409A1E6AADD200DE21E9 /* UIImageView+LLWebImage.m in Sources */,
 				CDA0E9EE1E69968300F9407B /* main.m in Sources */,
+				CDC640971E6AAB0F00DE21E9 /* NSString+NSString_LLAddition.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
